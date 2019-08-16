@@ -149,5 +149,5 @@ def register():
     dispatcher.add_handler(CommandHandler('help', help_handler))
     dispatcher.add_handler(CommandHandler('source', source))
     dispatcher.add_handler(CommandHandler('news', news))
-    dispatcher.add_handler(CommandHandler('stats', stats))
+    #dispatcher.add_handler(CommandHandler('stats', stats))
     dispatcher.add_handler(CommandHandler('modes', modes))
