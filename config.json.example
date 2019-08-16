@@ -4,7 +4,7 @@
     "open_lobby": true,
     "enable_translations": false,
     "workers": 32,
-    "default_gamemode": "fast",
+    "default_gamemode": "wild",
     "waiting_time": 120,
     "time_removal_after_skip": 20,
     "min_fast_turn_time": 15,
