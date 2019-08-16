@@ -90,8 +90,8 @@ def new_game(bot, update):
         game.owner.append(update.message.from_user.id)
         game.mode = DEFAULT_GAMEMODE
         send_async(bot, chat_id,
-                   text=_("Created a new game! Join the game with /join "
-                          "and start the game with /start"))
+                   text="Naya game shuru hua frandz! Join karna toh /join "
+                          "shuru karne k liye /start")
 
 
 @user_locale
@@ -107,7 +107,7 @@ def kill_game(bot, update):
 
     if not games:
             send_async(bot, chat.id,
-                       text=_("There is no running game in this chat."))
+                       text="Game hi chalu nahi :|")
             return
 
     game = games[-1]
@@ -143,7 +143,7 @@ def join_game(bot, update):
         gm.join_game(update.message.from_user, chat)
 
     except LobbyClosedError:
-            send_async(bot, chat.id, text=_("The lobby is closed"))
+            send_async(bot, chat.id, text="Gand maara madarjaat")
 
     except NoGameInChatError:
         send_async(bot, chat.id,
@@ -201,8 +201,7 @@ def leave_game(bot, update):
     else:
         if game.started:
             send_async(bot, chat.id,
-                       text=__("Okay. Next Player: {name}",
-                               multi=game.translate).format(
+                       text="Pussy. Next Player: {name}".format(
                            name=display_name(game.current_player.user)),
                        reply_to_message_id=update.message.message_id)
         else:
@@ -262,7 +261,7 @@ def kick_player(bot, update):
                 return
 
             send_async(bot, chat.id,
-                            text=_("{0} was kicked by {1}".format(display_name(kicked), display_name(user))))
+                           text="{1} ne {0} ki gand mari".format(display_name(kicked), display_name(user)))
 
         else:
             send_async(bot, chat.id,
@@ -271,8 +270,7 @@ def kick_player(bot, update):
             return
 
         send_async(bot, chat.id,
-                   text=__("Okay. Next Player: {name}",
-                           multi=game.translate).format(
+                   text="Okay. Next Player: {name}".format(
                        name=display_name(game.current_player.user)),
                    reply_to_message_id=update.message.message_id)
 
@@ -694,7 +692,7 @@ def process_result(bot, update, job_queue):
 
     if game_is_running(game):
         send_async(bot, chat.id,
-                   text=__("Next player: {name}", multi=game.translate)
+                   text=__("Agla chu: {name}", multi=game.translate)
                    .format(name=display_name(game.current_player.user)))
         start_player_countdown(bot, game, job_queue)
 
