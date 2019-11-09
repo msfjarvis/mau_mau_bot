@@ -91,8 +91,8 @@ def new_game(update: Update, context: CallbackContext):
         game.owner.append(update.message.from_user.id)
         game.mode = DEFAULT_GAMEMODE
         send_async(context.bot, chat_id,
-                   text=_("Created a new game! Join the game with /join "
-                          "and start the game with /start"))
+                   text=_("Naya game shuru hua frandz! Join karna toh /join "
+                          "shuru karne k liye /start"))
 
 
 @user_locale
@@ -108,7 +108,7 @@ def kill_game(update: Update, context: CallbackContext):
 
     if not games:
             send_async(context.bot, chat.id,
-                       text=_("There is no running game in this chat."))
+                       text=_("Game hi chalu nahi :|"))
             return
 
     game = games[-1]
@@ -144,7 +144,7 @@ def join_game(update: Update, context: CallbackContext):
         gm.join_game(update.message.from_user, chat)
 
     except LobbyClosedError:
-            send_async(context.bot, chat.id, text=_("The lobby is closed"))
+            send_async(context.bot, chat.id, text=_("Gand maara madarjaat"))
 
     except NoGameInChatError:
         send_async(context.bot, chat.id,
@@ -202,7 +202,7 @@ def leave_game(update: Update, context: CallbackContext):
     else:
         if game.started:
             send_async(context.bot, chat.id,
-                       text=__("Okay. Next Player: {name}",
+                       text=__("Pussy. Next Player: {name}",
                                multi=game.translate).format(
                            name=display_name(game.current_player.user)),
                        reply_to_message_id=update.message.message_id)
@@ -263,7 +263,7 @@ def kick_player(update: Update, context: CallbackContext):
                 return
 
             send_async(context.bot, chat.id,
-                            text=_("{0} was kicked by {1}".format(display_name(kicked), display_name(user))))
+                            text=_("{1} ne {0} ki gand mari".format(display_name(kicked), display_name(user))))
 
         else:
             send_async(context.bot, chat.id,
@@ -695,7 +695,7 @@ def process_result(update: Update, context: CallbackContext):
 
     if game_is_running(game):
         nextplayer_message = (
-            __("Next player: {name}", multi=game.translate)
+            __("Agla chu: {name}", multi=game.translate)
             .format(name=display_name(game.current_player.user)))
         choice = [[InlineKeyboardButton(text=_("Make your choice!"), switch_inline_query_current_chat='')]]
         send_async(context.bot, chat.id,
