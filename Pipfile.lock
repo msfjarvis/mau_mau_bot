@@ -18,23 +18,23 @@
     "default": {
         "certifi": {
             "hashes": [
-                "sha256:046832c04d4e752f37383b628bc601a7ea7211496b4638f6514d0e5b9acc4939",
-                "sha256:945e3ba63a0b9f577b1395204e13c3a231f9bc0223888be653286534e5873695"
+                "sha256:e4f3620cfea4f83eedc95b24abd9cd56f3c4b146dd0177e83a21b4eb49e21e50",
+                "sha256:fd7c7c74727ddcf00e9acd26bba8da604ffec95bf1c2144e67aff7a8b50e6cef"
             ],
-            "version": "==2019.6.16"
+            "version": "==2019.9.11"
         },
         "future": {
             "hashes": [
-                "sha256:67045236dcfd6816dc439556d009594abf643e5eb48992e36beac09c2ca659b8"
+                "sha256:b1bead90b70cf6ec3f0710ae53a525360fa360d306a86583adc6bf83a4db537d"
             ],
-            "version": "==0.17.1"
+            "version": "==0.18.2"
         },
         "pony": {
             "hashes": [
-                "sha256:55bb9d4d12029d8c2bbbc7a284970e72225035db7e6370c0a15ec93d1886fe88"
+                "sha256:d1008d465d3c5db435fe2636f4c9e1a4a04a24f27c5d7cb4943ba5c596de7e17"
             ],
             "index": "pypi",
-            "version": "==0.7.10"
+            "version": "==0.7.11"
         },
         "python-telegram-bot": {
             "hashes": [
