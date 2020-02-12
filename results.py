@@ -222,8 +222,8 @@ def game_info(game):
         "\n" +
         _("Last card: {card}").format(card=repr(game.last_card)) +
         "\n" +
-        _("Player: {player_list}",
-          "Players: {player_list}",
+        _("{count} player: {player_list}",
+          "{count} players: {player_list}",
           len(players))
-        .format(player_list=" -> ".join(players))
+        .format(count=len(players), player_list=" -> ".join(players))
     )
