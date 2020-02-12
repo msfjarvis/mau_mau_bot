@@ -143,7 +143,7 @@ def join_game(bot, update):
         gm.join_game(update.message.from_user, chat)
 
     except LobbyClosedError:
-            send_async(bot, chat.id, text="Gand maara madarjaat")
+            send_async(bot, chat.id, text="Gand maara madarjaat", reply_to_message_id=update.message.message_id)
 
     except NoGameInChatError:
         send_async(bot, chat.id,
