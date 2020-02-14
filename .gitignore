@@ -69,3 +69,7 @@ target/
 
 # Database file
 uno.sqlite3
+
+# IDE and virualenv
+.vscode/
+venv/
