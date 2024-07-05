@@ -20,28 +20,28 @@
 import logging
 from datetime import datetime
 
-from telegram import ParseMode, InlineKeyboardMarkup, \
+from telegram import InlineKeyboardMarkup, \
     InlineKeyboardButton, Update
+from telegram.constants import ParseMode
 from telegram.ext import InlineQueryHandler, ChosenInlineResultHandler, \
-    CommandHandler, MessageHandler, Filters, CallbackQueryHandler, CallbackContext
-from telegram.ext.dispatcher import run_async
+    CommandHandler, MessageHandler, filters, CallbackQueryHandler, CallbackContext
 
-import card as c
-import settings
-import simple_commands
-from actions import do_skip, do_play_card, do_draw, do_call_bluff, start_player_countdown
-from config import WAITING_TIME, DEFAULT_GAMEMODE, MIN_PLAYERS
-from errors import (NoGameInChatError, LobbyClosedError, AlreadyJoinedError,
+from mau_mau_bot import card as c
+from mau_mau_bot import settings
+from mau_mau_bot import simple_commands
+from mau_mau_bot.actions import do_skip, do_play_card, do_draw, do_call_bluff, start_player_countdown
+from mau_mau_bot.config import WAITING_TIME, DEFAULT_GAMEMODE, MIN_PLAYERS
+from mau_mau_bot.errors import (NoGameInChatError, LobbyClosedError, AlreadyJoinedError,
                     NotEnoughPlayersError, DeckEmptyError)
-from internationalization import _, __, user_locale, game_locales
-from results import (add_call_bluff, add_choose_color, add_draw, add_gameinfo,
+from mau_mau_bot.internationalization import _, __, user_locale, game_locales
+from mau_mau_bot.results import (add_call_bluff, add_choose_color, add_draw, add_gameinfo,
                      add_no_game, add_not_started, add_other_cards, add_pass,
                      add_card, add_mode_classic, add_mode_fast, add_mode_wild, add_mode_text)
-from shared_vars import gm, updater, dispatcher
-from simple_commands import help_handler
-from start_bot import start_bot
-from utils import display_name
-from utils import send_async, answer_async, error, TIMEOUT, user_is_creator_or_admin, user_is_creator, game_is_running
+from mau_mau_bot.shared_vars import gm, updater, dispatcher
+from mau_mau_bot.simple_commands import help_handler
+from mau_mau_bot.start_bot import start_bot
+from mau_mau_bot.utils import display_name
+from mau_mau_bot.utils import send_async, answer_async, error, TIMEOUT, user_is_creator_or_admin, user_is_creator, game_is_running
 
 
 logging.basicConfig(
@@ -736,7 +736,7 @@ dispatcher.add_handler(CommandHandler('skip', skip_player))
 dispatcher.add_handler(CommandHandler('notify_me', notify_me))
 simple_commands.register()
 settings.register()
-dispatcher.add_handler(MessageHandler(Filters.status_update, status_update))
+dispatcher.add_handler(MessageHandler(filters.status_update, status_update))
 dispatcher.add_error_handler(error)
 
 start_bot(updater)

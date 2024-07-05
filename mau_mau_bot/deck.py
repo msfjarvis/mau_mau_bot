@@ -21,9 +21,9 @@
 from random import shuffle
 import logging
 
-import card as c
-from card import Card
-from errors import DeckEmptyError
+from mau_mau_bot import card as c
+from mau_mau_bot.card import Card
+from mau_mau_bot.errors import DeckEmptyError
 
 
 class Deck(object):

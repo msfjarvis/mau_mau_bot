@@ -20,11 +20,11 @@
 
 import logging
 
-from game import Game
-from player import Player
-from errors import (AlreadyJoinedError, LobbyClosedError, NoGameInChatError,
+from mau_mau_bot.game import Game
+from mau_mau_bot.player import Player
+from mau_mau_bot.errors import (AlreadyJoinedError, LobbyClosedError, NoGameInChatError,
                     NotEnoughPlayersError)
-from promotions import send_promotion_async
+from mau_mau_bot.promotions import send_promotion_async
 
 class GameManager(object):
     """ Manages all running games by using a confusing amount of dicts """

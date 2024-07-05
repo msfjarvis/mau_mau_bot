@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "mau-mau-bot"
+version = "0.1.0"
+description = ""
+authors = ["Harsh Shandilya <me@msfjarvis.dev>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+python-telegram-bot = "^21.3"
+pony = "*"
+urllib3 = "^2.2.2"
+
+[tool.poetry.group.dev.dependencies]
+telethon = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+mau-mau-bot = "mau_mau_bot:main"

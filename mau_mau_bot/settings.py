@@ -19,13 +19,13 @@
 
 
 from telegram import ReplyKeyboardMarkup, Update
-from telegram.ext import CommandHandler, Filters, MessageHandler, CallbackContext
+from telegram.ext import CommandHandler, filters, MessageHandler, CallbackContext
 
-from utils import send_async
-from user_setting import UserSetting
-from shared_vars import dispatcher
-from locales import available_locales
-from internationalization import _, user_locale
+from mau_mau_bot.utils import send_async
+from mau_mau_bot.user_setting import UserSetting
+from mau_mau_bot.shared_vars import dispatcher
+from mau_mau_bot.locales import available_locales
+from mau_mau_bot.internationalization import _, user_locale
 
 
 @user_locale
@@ -97,9 +97,9 @@ def locale_select(update: Update, context: CallbackContext):
 
 def register():
     dispatcher.add_handler(CommandHandler('settings', show_settings))
-    dispatcher.add_handler(MessageHandler(Filters.regex('^([' + '📊' +
+    dispatcher.add_handler(MessageHandler(filters.regex('^([' + '📊' +
                                                         '🌍' +
                                                         '❌' + ']) .+$'),
                                         kb_select))
-    dispatcher.add_handler(MessageHandler(Filters.regex(r'^(\w\w_\w\w) - .*'),
+    dispatcher.add_handler(MessageHandler(filters.regex(r'^(\w\w_\w\w) - .*'),
                                         locale_select))

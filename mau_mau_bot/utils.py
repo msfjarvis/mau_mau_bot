@@ -22,9 +22,9 @@ import logging
 from telegram import Update
 from telegram.ext import CallbackContext
 
-from internationalization import _, __
-from mwt import MWT
-from shared_vars import gm, dispatcher
+from mau_mau_bot.internationalization import _, __
+from mau_mau_bot.mwt import MWT
+from mau_mau_bot.shared_vars import gm, dispatcher
 
 logger = logging.getLogger(__name__)
 

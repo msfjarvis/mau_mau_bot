@@ -21,9 +21,9 @@
 import logging
 from datetime import datetime
 
-import card as c
-from errors import DeckEmptyError
-from config import WAITING_TIME
+from mau_mau_bot import card as c
+from mau_mau_bot.errors import DeckEmptyError
+from mau_mau_bot.config import WAITING_TIME
 
 
 class Player(object):

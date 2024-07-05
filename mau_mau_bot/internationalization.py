@@ -23,8 +23,8 @@ from functools import wraps
 
 from locales import available_locales
 from pony.orm import db_session
-from user_setting import UserSetting
-from shared_vars import gm
+from mau_mau_bot.user_setting import UserSetting
+from mau_mau_bot.shared_vars import gm
 
 GETTEXT_DOMAIN = 'unobot'
 GETTEXT_DIR = 'locales'
